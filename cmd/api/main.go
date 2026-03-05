@@ -49,7 +49,17 @@ func main() {
 	private := r.Group("/api")
 	private.Use(middleware.AuthMiddleware())
 	{
+		// Rotas de alunos
 		private.POST("/alunos", handlers.CreateAluno)
+		private.GET("/alunos", handlers.ListAlunosProfessor)
+		private.DELETE("/alunos/:id", handlers.DeleteAluno)
+
+		// Rotas de atividades
+		private.POST("/atividades", handlers.CreateAtividade)
+		private.GET("/atividades", handlers.ListAtividadesProfessor)
+		private.DELETE("/atividades/:atividade_id", handlers.DeleteAtividade)
+		private.POST("/atividades/:atividade_id/alunos", handlers.AssociarAlunoAtividade)
+		private.GET("/alunos/:aluno_id/atividades", handlers.ListAtividadesAluno)
 	}
 
 	// Teste simples protegido (depois vamos criar middleware)

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<style>
+		body { font-family: Arial, sans-serif; }
+		.container { max-width: 600px; margin: 0 auto; padding: 20px; }
+		.header { background-color: #F3EFEA; color: #0F172A; padding: 20px; border-radius: 5px 5px 0 0; }
+		.content { background-color: #f9f9f9; padding: 20px; }
+		.credentials { background-color: #F3EFEA; padding: 15px; border-left: 4px solid #c7a67d; margin: 20px 0; }
+		.button { display: inline-block; background-color: #1E40AF; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-top: 20px; }
+		.footer { background-color: #F3EFEA; color: #0F172A; padding: 15px; text-align: center; border-radius: 0 0 5px 5px; font-size: 12px; }
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="header">
+			<h2>Bem-vindo ao Sistema BEGIN!</h2>
+		</div>
+		<div class="content">
+			<p>Olá <strong>%s</strong>,</p>
+			<p>Sua conta foi criada com sucesso por um professor. Segue abaixo suas credenciais de acesso:</p>
+			
+			<div class="credentials">
+				<h3>Suas Credenciais</h3>
+				<p><strong>Email:</strong> %s</p>
+				<p><strong>Senha Temporária:</strong> <code style="background: #fff; padding: 2px 5px;">%s</code></p>
+			</div>
+
+			<p><strong>⚠️ Importante:</strong> Esta é uma senha temporária. Recomendamos alterar para uma senha pessoal após o primeiro acesso.</p>
+
+			<a href="%s/login" class="button">Acessar Sistema</a>
+
+			<p style="margin-top: 30px; color: #555;">Se tiver dúvidas, entre em contato com seu professor.</p>
+		</div>
+		<div class="footer">
+			<p>&copy; 2026 Begin - Sistema de Gestão de Alunos</p>
+		</div>
+	</div>
+</body>
+</html>
