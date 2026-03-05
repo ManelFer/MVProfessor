@@ -10,8 +10,8 @@ import (
 	"github.com/golang-jwt/jwt/v5"
 	"golang.org/x/crypto/bcrypt"
 
-	"internal/database"
-	"internal/models"
+	"github.com/ManelFer/MVProfessor/internal/database"
+	"github.com/ManelFer/MVProfessor/internal/models"
 )
 
 func Register(c *gin.Context) {
