@@ -3,7 +3,6 @@ package handlers
 import (
 	"log"
 	"net/http"
-
 	"github.com/gin-gonic/gin"
 
 	"github.com/ManelFer/MVProfessor/internal/database"
