@@ -10,3 +10,4 @@ ALTER TABLE users
 ADD email VARCHAR(150) UNIQUE NOT NULL
 
 CREATE INDEX idx_users_email ON users(email);
+

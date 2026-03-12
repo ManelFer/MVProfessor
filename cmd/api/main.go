@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 	"os"
+	"time"
 
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
@@ -10,6 +11,7 @@ import (
 	"github.com/ManelFer/MVProfessor/internal/database"
 	"github.com/ManelFer/MVProfessor/internal/handlers"
 	"github.com/ManelFer/MVProfessor/internal/middleware"
+	"github.com/gin-contrib/cors"
 )
 
 func main() {
@@ -37,6 +39,16 @@ func main() {
 	defer database.Close()
 
 	r := gin.Default()
+
+	// configurar CORS
+	r.Use(cors.New(cors.Config{
+		AllowOrigins:     []string{"*"},
+		AllowMethods:     []string{"GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"},
+		AllowHeaders:     []string{"Origin", "Content-Type", "Authorization"},
+		ExposeHeaders:    []string{"Content-Length"},
+		AllowCredentials: true,
+		MaxAge:           12 * time.Hour,
+	}))
 
 	// Rotas públicas
 	auth := r.Group("/auth")
