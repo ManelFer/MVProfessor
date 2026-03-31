@@ -1,6 +1,6 @@
 -- Adicionar coluna role na tabela users se não existir
 ALTER TABLE users
-ADD COLUMN IF NOT EXISTS role VARCHAR(50) DEFAULT 'aluno';
+ADD COLUMN IF NOT EXISTS role VARCHAR(50) DEFAULT 'professor';
 
 -- Criar tabela alunos vinculada ao professor
 CREATE TABLE IF NOT EXISTS alunos (
